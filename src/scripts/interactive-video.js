@@ -29,7 +29,7 @@ const KEYBOARD_STEP_LENGTH_SECONDS = 5;
 /**
  * Initialize a new interactive video.
  *
- * @class H5P.InteractiveVideo
+ * @class H5P.NDLAInteractiveVideo
  * @extends H5P.EventDispatcher
  * @property {Object|undefined} editor Set when editing
  * @param {InteractiveVideoParameters} params

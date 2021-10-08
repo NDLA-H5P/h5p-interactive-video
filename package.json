@@ -1,5 +1,5 @@
 {
-  "name": "h5p-interactive-video",
+  "name": "h5p-ndlainteractive-video",
   "version": "1.17.0",
   "description": "Put texts, tasks and other medias on top of your video.",
   "private": true,
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/h5p/h5p-interactive-video.git"
+    "url": "git+https://github.com/ndla-h5p/h5p-interactive-video.git"
   },
   "keywords": [
     "h5p",
