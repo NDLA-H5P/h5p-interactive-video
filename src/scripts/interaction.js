@@ -102,10 +102,10 @@ const isScrollableLibrary = function (library) {
 /**
  * Keeps control of interactions in the interactive video.
  *
- * @class H5P.InteractiveVideoInteraction
+ * @class H5P.NDLAInteractiveVideoInteraction
  * @extends H5P.EventDispatcher
  * @param {Parameters} parameters describes action behavior
- * @param {H5P.InteractiveVideo} player instance
+ * @param {H5P.NDLAInteractiveVideo} player instance
  * @param {Object} previousState
  */
 function Interaction(parameters, player, previousState) {
@@ -211,7 +211,7 @@ function Interaction(parameters, player, previousState) {
     // if requires completion -> open dialog right away
     if (self.getRequiresCompletion() &&
         player.editor === undefined &&
-        player.currentState !== H5P.InteractiveVideo.SEEKING) {
+        player.currentState !== H5P.NDLAInteractiveVideo.SEEKING) {
       openDialog(true);
     }
 
@@ -880,7 +880,7 @@ function Interaction(parameters, player, previousState) {
     self.trigger('display', $interaction);
 
     if (self.getRequiresCompletion() &&
-        player.currentState !== H5P.InteractiveVideo.SEEKING &&
+        player.currentState !== H5P.NDLAInteractiveVideo.SEEKING &&
         player.editor === undefined &&
         !self.hasFullScore()) {
       showOverlayMask($interaction);
@@ -1039,7 +1039,7 @@ function Interaction(parameters, player, previousState) {
    * Interactions that needs answer are interactions that are visible,
    * requires completion and does not have full score.
    *
-   * @return {Array.<H5P.InteractiveVideoInteraction>}
+   * @return {Array.<H5P.NDLAInteractiveVideoInteraction>}
    *    Interactions that needs answer
    */
   var getInteractionsThatNeedsAnswer = function () {
@@ -1647,7 +1647,7 @@ function Interaction(parameters, player, previousState) {
       if (instance !== undefined) {
         const interactionCopyrights = new H5P.ContentCopyrights();
         interactionCopyrights.addContent(H5P.getCopyrights(instance, parameters, player.contentId));
-        interactionCopyrights.setLabel(title + ' ' + H5P.InteractiveVideo.humanizeTime(parameters.duration.from) + ' - ' + H5P.InteractiveVideo.humanizeTime(parameters.duration.to));
+        interactionCopyrights.setLabel(title + ' ' + H5P.NDLAInteractiveVideo.humanizeTime(parameters.duration.from) + ' - ' + H5P.NDLAInteractiveVideo.humanizeTime(parameters.duration.to));
 
         return interactionCopyrights;
       }
