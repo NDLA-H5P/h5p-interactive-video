@@ -27,7 +27,7 @@ const ButtonType = {
 const SelectorControl = function (name, options, selectedOption, menuItemType, l10n, contentId) {
   /** @alias H5P.NDLAInteractiveVideo.SelectorControl# */
   const self = this;
-  const id = `interactive-video-${contentId}-menu-${name}`;
+  const id = `ndlainteractive-video-${contentId}-menu-${name}`;
   const controls = new Controls([new Keyboard()]);
   controls.on('close', () => hide());
 

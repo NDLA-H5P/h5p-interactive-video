@@ -50,11 +50,11 @@ function InteractiveVideo(params, id, contentData) {
   self.instanceIndex = getAndIncrementGlobalCounter();
 
   // Create dynamic ids
-  self.bookmarksMenuId = 'interactive-video-' + this.contentId + '-bookmarks-chooser';
-  self.endscreensMenuId = 'interactive-video-' + this.contentId + '-endscreens-chooser';
-  self.qualityMenuId = 'interactive-video-' + this.contentId + '-quality-chooser';
-  self.captionsMenuId = 'interactive-video-' + this.contentId + '-captions-chooser';
-  self.playbackRateMenuId = 'interactive-video-' + this.contentId + '-playback-rate-chooser';
+  self.bookmarksMenuId = 'ndlainteractive-video-' + this.contentId + '-bookmarks-chooser';
+  self.endscreensMenuId = 'ndlainteractive-video-' + this.contentId + '-endscreens-chooser';
+  self.qualityMenuId = 'ndlainteractive-video-' + this.contentId + '-quality-chooser';
+  self.captionsMenuId = 'ndlainteractive-video-' + this.contentId + '-captions-chooser';
+  self.playbackRateMenuId = 'ndlainteractive-video-' + this.contentId + '-playback-rate-chooser';
 
   // IDs of popup menus that could need closing
   self.popupMenuButtons = [];
@@ -696,7 +696,7 @@ InteractiveVideo.prototype.attach = function ($container) {
     this.setActivityStarted();
   }
 
-  $container.addClass('h5p-interactive-video').html('');
+  $container.addClass('h5p-ndlainteractive-video').html('');
   this.$videoWrapper.appendTo($container);
   this.$controls.appendTo($container);
 
@@ -1045,7 +1045,7 @@ InteractiveVideo.prototype.loaded = function () {
  * Initialize interaction at the given index.
  *
  * @param {number} index
- * @returns {H5P.InteractiveVideoInteraction}
+ * @returns {H5P.NDLAInteractiveVideoInteraction}
  */
 InteractiveVideo.prototype.initInteraction = function (index) {
   var self = this;
@@ -1322,7 +1322,7 @@ InteractiveVideo.prototype.addBubbles = function () {
         content: this.endscreen.getDOM(),
         focus: () => this.endscreen.focus(),
         maxWidth: 'auto',
-        style: 'h5p-interactive-video-bubble-endscreen',
+        style: 'h5p-ndlainteractive-video-bubble-endscreen',
         mode: 'full'
       }
     );
@@ -1489,7 +1489,7 @@ InteractiveVideo.prototype.toggleEndscreen = function (show) {
   show = (show === undefined) ? !this.bubbleEndscreen.isActive() : show;
 
   if (show) {
-    this.disableTabIndexes('.h5p-interactive-video-endscreen');
+    this.disableTabIndexes('.h5p-ndlainteractive-video-endscreen');
     this.stateBeforeEndscreen = this.currentState;
     this.video.pause();
   }
@@ -3324,7 +3324,7 @@ InteractiveVideo.prototype.toggleFocusTrap = function () {
 /**
  * Trap the focus within a list of interactions
  *
- * @param {H5P.InteractiveVideoInteraction[]} requiredInteractions
+ * @param {H5P.NDLAInteractiveVideoInteraction[]} requiredInteractions
  * @param {jQuery} $focusedElement
  */
 InteractiveVideo.prototype.trapFocusInInteractions = function (requiredInteractions, $focusedElement) {
@@ -3369,7 +3369,7 @@ InteractiveVideo.prototype.hideOverlayMask = function () {
  */
 InteractiveVideo.prototype.showWarningMask = function () {
   const self = this;
-  const warningTextId = `interactive-video-${self.contentId}-${self.instanceIndex}-completion-warning-text`;
+  const warningTextId = `ndlainteractive-video-${self.contentId}-${self.instanceIndex}-completion-warning-text`;
 
   // create mask if doesn't exist
   if (!self.$mask) {
@@ -3447,7 +3447,7 @@ InteractiveVideo.prototype.hasUncompletedRequiredInteractions = function (second
 /**
  * Returns an array of interactions currently visible
  *
- * @return {H5P.InteractiveVideoInteraction[]} visible interactions
+ * @return {H5P.NDLAInteractiveVideoInteraction[]} visible interactions
  */
 InteractiveVideo.prototype.getVisibleInteractions = function () {
   return this.interactions.filter(function (interaction) {
@@ -3458,7 +3458,7 @@ InteractiveVideo.prototype.getVisibleInteractions = function () {
 /**
  * Returns an array of interactions currently visible
  *
- * @return {H5P.InteractiveVideoInteraction[]} visible interactions
+ * @return {H5P.NDLAInteractiveVideoInteraction[]} visible interactions
  */
 InteractiveVideo.prototype.getVisibleInteractionsAt = function (second) {
   return this.interactions.filter(function (interaction) {

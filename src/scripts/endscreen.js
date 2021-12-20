@@ -2,8 +2,8 @@ import {onClick} from 'h5p-lib-controls/src/scripts/ui/input';
 
 const $ = H5P.jQuery;
 
-const ENDSCREEN_STYLE_BASE = 'h5p-interactive-video-endscreen';
-const ENDSCREEN_STYLE_BUTTON_HIDDEN = 'h5p-interactive-video-endscreen-submit-button-hidden';
+const ENDSCREEN_STYLE_BASE = 'h5p-ndlainteractive-video-endscreen';
+const ENDSCREEN_STYLE_BUTTON_HIDDEN = 'h5p-ndlainteractive-video-endscreen-submit-button-hidden';
 
 const isset = function (value) {
   return value !== undefined && value !== null;
@@ -191,7 +191,7 @@ class Endscreen extends H5P.EventDispatcher {
 
     $('<div/>', {
       'class': `${ENDSCREEN_STYLE_BASE}-overview-table-row-time`,
-      html: H5P.InteractiveVideo.humanizeTime(time),
+      html: H5P.NDLAInteractiveVideo.humanizeTime(time),
       appendTo: $row,
       'aria-hidden': true
     });
